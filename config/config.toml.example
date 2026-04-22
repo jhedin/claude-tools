@@ -1,0 +1,34 @@
+# claude-tools configuration
+#
+# Copy to ~/.config/claude-tools/config.toml. All sections are optional;
+# missing fields use built-in defaults.
+
+[planner]
+model = "claude-sonnet-4-6"
+timeout_seconds = 30
+
+[safety]
+model = "claude-sonnet-4-6"
+timeout_seconds = 15
+
+[cache]
+enabled = true
+# Default: ~/.cache/claude-tools/rewrites.db
+# path = "~/.cache/claude-tools/rewrites.db"
+
+[history]
+# Default: ~/.local/share/claude-tools/history.jsonl
+# path = "~/.local/share/claude-tools/history.jsonl"
+
+[aliases]
+# Tools get `c`-prefixed aliases (cfind, cgrep, cjq, cawk, csed, ...) and
+# trigger the widget when their name appears in $BUFFER.
+tools = ["find", "grep", "jq", "awk", "sed"]
+
+[allowlist]
+# Extra safe tools (merged with the built-in allowlist).
+extra_safe = []
+
+[rejectlist]
+# Extra regex patterns that force rejection (merged with the built-in list).
+extra_reject = []
